@@ -18,6 +18,7 @@ user: User;
 
   editUser(): void {
     this.router.navigate([this.user.id], {relativeTo: this.activatedRoute, state: this.user});
+    console.log('app-user');
     console.log(this.user);
   }
 }
