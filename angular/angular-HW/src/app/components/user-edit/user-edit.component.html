@@ -19,13 +19,32 @@
 <!--</form>-->
 <!--</div>-->
 
-<div *ngIf="user">
-  <form [formGroup]="form" (ngSubmit)="submitChanges(form)">
-    <input [formControl]="name">
-    <input [formControl]="age">
-    <input [formControl]="email">
-    <button [disabled]="!form.valid">edit</button>
-  </form>
-</div>
+<!--<div *ngIf="user">-->
+<!--  <form [formGroup]="form" (ngSubmit)="submitChanges(form)">-->
+<!--    <input [formControl]="name">-->
+<!--    <input [formControl]="age">-->
+<!--    <input [formControl]="email">-->
+<!--    <button [disabled]="!form.valid">edit</button>-->
+<!--  </form>-->
+<!--</div>-->
+<form [formGroup]="form" class="formWrapper">
+
+  <div>
+
+    <h2 class="center">{{user.name}}</h2>
+    <label class="labelEdit"><b>name:</b>
+      <input formControlName="name"/>
+    </label>
+    <label class="labelEdit"><b>email:</b>
+      <input formControlName="email"/>
+    </label>
+    <label class="labelEdit"><b>age:</b>
+      <input formControlName="age"/>
+    </label>
+
+  </div>
+
+</form>
+
 
 <router-outlet></router-outlet>
