@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {PostService} from './services/post.service';
+import {Post} from './interfaces/post';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-practic';
+  posts: Post[];
+
+  constructor(private postService: PostService) {
+  }
+
+  getPostsId(id: number): void {
+    this.postService.getPosts(id).subscribe(value => this.posts = value);
+  }
 }
+

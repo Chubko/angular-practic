@@ -1,0 +1,4 @@
+<div>
+  <app-users [class]="'users'" (bubbleUp)="getPostsId($event)"></app-users>
+  <app-posts *ngIf="posts" [class]="'posts'" [posts]="posts"></app-posts>
+</div>
