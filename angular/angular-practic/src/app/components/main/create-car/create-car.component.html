@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+  <div>
+    <label>Brand: <input type="text" formControlName="brand"></label>
+  </div>
+  <div>
+    <label>Model: <input type="text" formControlName="model"></label>
+  </div>
+  <div>
+    <label>Year: <input type="number" formControlName="year"></label>
+  </div>
+  <div *ngIf="error">{{error| json }}</div>
+  <button (click)="save(form)">save</button>
+</form>
