@@ -1,0 +1,18 @@
+<div>
+<form [formGroup]="myForm" (ngSubmit)="logIn(myForm)">
+  <label>
+    username:
+    <input [formControl]="userName" name="userName">
+  </label>
+  <br>
+  <label>
+    password:
+    <input [formControl]="password" name="password">
+  </label>
+  <br>
+  <span *ngIf="errorMsg">login or password is incorrect</span>
+  <br>
+  <button>log in</button>
+</form>
+</div>
+<router-outlet></router-outlet>

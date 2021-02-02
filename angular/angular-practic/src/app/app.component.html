@@ -1,0 +1,6 @@
+<div>
+  <a [routerLink]="['auth','login']" (bubbleUp)="getUser($event)">login</a>
+  <a [routerLink]="['auth','register']">register</a>
+</div>
+
+<router-outlet></router-outlet>
