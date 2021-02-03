@@ -1,8 +1,7 @@
-import {Component, OnInit, Output} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
 import {AuthentificationService} from '../../services/authentification.service';
 import {Router} from '@angular/router';
-import {EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-login-form',
@@ -15,8 +14,6 @@ export class LoginFormComponent implements OnInit {
   password: FormControl;
   errorMsg: string;
   user: string;
-  // @Output()
-  // bubbleup = new EventEmitter<string>;
 
   constructor(private authService: AuthentificationService, private router: Router) {
   }
@@ -27,7 +24,6 @@ export class LoginFormComponent implements OnInit {
     if (res) {
       this.router.navigate(['main/users']);
       this.user = myForm.value.userName;
-      // this.bubbleup.emit(this.user);
     } else {
       this.errorMsg = 'error';
     }

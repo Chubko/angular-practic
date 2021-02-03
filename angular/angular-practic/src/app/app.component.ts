@@ -6,11 +6,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-user: string;
 
-  getUser(user: string): void {
-    this.user = user;
-    console.log(this.user);
-  }
 }
 

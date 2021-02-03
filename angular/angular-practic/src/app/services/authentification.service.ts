@@ -14,8 +14,7 @@ export class AuthentificationService {
   logIn(user: Authentification): boolean {
     return !!this.users.filter(value => JSON.stringify(value) === JSON.stringify(user)).length;
   }
-  register(user: any): void{
-    const newUsers = [...this.users, user];
-    this.users = newUsers;
+  register(user: Authentification): void{
+    this.users.push(user);
   }
 }

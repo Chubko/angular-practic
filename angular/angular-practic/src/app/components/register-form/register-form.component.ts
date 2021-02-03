@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {AuthentificationService} from '../../services/authentification.service';
-import {Router} from '@angular/router';
-import {Authentification} from '../../interfaces/authentification';
 
 @Component({
   selector: 'app-register-form',
@@ -16,13 +14,11 @@ export class RegisterFormComponent implements OnInit {
   errorMsg: string;
 
 
-  constructor(private authService: AuthentificationService, private router: Router) {
+  constructor(private authService: AuthentificationService) {
   }
 
   register(myForm: FormGroup): void {
-    const res = this.authService.register(myForm.value);
-    console.log(myForm.value);
-    console.log(res);
+    this.authService.register(myForm.getRawValue());
   }
 
   ngOnInit(): void {
