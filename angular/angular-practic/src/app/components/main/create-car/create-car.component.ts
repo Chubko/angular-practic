@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CarService} from '../../../service/car.service';
 import {Router} from '@angular/router';
@@ -11,8 +11,10 @@ import {Router} from '@angular/router';
 export class CreateCarComponent implements OnInit {
 
   form: FormGroup;
-error: string;
-  constructor(private carService: CarService, private router: Router) { }
+  error: any;
+
+  constructor(private carService: CarService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -21,10 +23,11 @@ error: string;
       year: new FormControl('')
     });
   }
-save(form: FormGroup): void{
+
+  save(form: FormGroup): void {
     this.carService.create(form.getRawValue()).subscribe(value => {
       console.log(value);
       this.router.navigate(['cars']);
     }, error => this.error = error.error);
-}
+  }
 }

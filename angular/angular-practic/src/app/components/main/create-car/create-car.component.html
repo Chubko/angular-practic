@@ -8,6 +8,6 @@
   <div>
     <label>Year: <input type="number" formControlName="year"></label>
   </div>
-  <div *ngIf="error">{{error| json }}</div>
+  <div *ngIf="error">{{error | json }}</div>
   <button (click)="save(form)">save</button>
 </form>

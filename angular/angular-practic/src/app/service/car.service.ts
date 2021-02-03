@@ -8,7 +8,6 @@ import {urls} from '../config';
   providedIn: 'root'
 })
 export class CarService {
-  private url = 'http://192.168.88.31:8000/cars';
 
   constructor(private httpClient: HttpClient) {
   }
