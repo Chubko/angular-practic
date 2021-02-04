@@ -1,0 +1,5 @@
+<div *ngIf="users">
+  <div appBackground appColor *ngFor="let user of users|userTransform: 'My name is '">
+    {{user}}
+  </div>
+</div>
